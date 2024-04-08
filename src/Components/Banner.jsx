@@ -28,8 +28,11 @@ const Banner = () => {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper bg-opacity-60 p-4"
       >
-      <div className='bg-opacity-60 p-4'>
-      <SwiperSlide><img className='container h-[550px] mx-auto rounded-2xl' src="https://www.sequoiavacationrentals.com/uploads/3/4/9/2/34921155/kadikc-42_orig.jpg" /></SwiperSlide>
+      <div className='bg-opacity-60 p-4 relative'>
+      <SwiperSlide><img className='container h-[550px] mx-auto rounded-2xl' src="https://www.sequoiavacationrentals.com/uploads/3/4/9/2/34921155/kadikc-42_orig.jpg" />
+      <h1 className='lg:text-4xl text-2xl top-10 absolute lg:top-[10%] lg:left-[25%] bg-slate-300 opacity-70 p-4 rounded-3xl font-bold  font-neon text-center'> Where Dreams Meet Reality <br />Explore Residential Properties with Us</h1>
+      <p className='top-10 absolute lg:top-[10%] lg:left-[25%]'>Find your dream home with us. Our diverse range of residential properties offers something for every lifestyle. Let our dedicated team guide you through the process. Start your journey to homeownership today!</p>
+      </SwiperSlide>
       <SwiperSlide><img className='container h-[550px] mx-auto rounded-2xl' src="https://www.lanciahomes.com/sites/default/files/blog-files/lancia_homes_reasons_why_millennials_prefer_single-family_homes_image1.jpeg" /></SwiperSlide>
         <SwiperSlide><img className='container h-[550px] mx-auto rounded-2xl' src="https://media.istockphoto.com/id/1279204567/photo/colorful-townhouses-in-calgary-alberta-canada.jpg?s=612x612&w=0&k=20&c=hxBTNWm5u4pgJCCks4VXq0jXOeA92qUF4sV6Ppp6dxU=" /></SwiperSlide>
         <SwiperSlide><img className='container h-[550px] mx-auto rounded-2xl' src="https://www.chapman.edu/students/new-students/_files/new-student-housing-masthead.jpg" /></SwiperSlide>
