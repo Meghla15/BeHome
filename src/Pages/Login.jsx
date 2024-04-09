@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <section className="p-6 bg-green-100 dark:text-gray-800 container mx-auto rounded-2xl mb-14">
 	<div className=" grid gap-4 text-center lg:grid-cols-2 xl:grid-cols-5">
-		<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50 border-[1px] border-slate-300">
+		<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 lg:col-span-2 col-span-3 dark:bg-gray-50 border-[1px] border-slate-300">
         
 			<h1 className='text-3xl font-extrabold font-neon mb-6'>Please Login Here</h1>
 			<form noValidate="" action="" className="self-stretch space-y-3">

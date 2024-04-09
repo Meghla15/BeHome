@@ -7,6 +7,7 @@ import AboutUs from "../Pages/AboutUs";
 import Contact from "../Pages/Contact";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import CardDetails from "../DetailsPage/CardDetails";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         {
           path: "/register",
           element:<Register></Register>
+        },
+        {
+          path: "/card-details/:id",
+          element:<CardDetails></CardDetails>
         },
        {
           path: "/updateProfile",

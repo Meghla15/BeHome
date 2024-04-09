@@ -1,5 +1,5 @@
 import React from 'react';
-import 'animate.css';
+
 
 const UpdateProfile = () => {
     return (

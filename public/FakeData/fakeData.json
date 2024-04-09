@@ -38,7 +38,7 @@
         "area": "1200 sq ft",
         "location": "City Center",
         "facilities": ["living room", "kitchen", "balcony"],
-        "image_url": "https://via.placeholder.com/400",
+        "image_url": "https://images1.apartments.com/i2/_xB1g0MxMfdBgg-gASrdzhVLw89XKxIy5poKqvrXK0g/117/lofts-at-waikoloa-waikoloa-hi-building-photo.jpg?p=1",
         "view_property_button": "<button>View Property</button>"
       },
 
@@ -52,7 +52,7 @@
         "area": "500 sq ft (per room)",
         "location": "University District",
         "facilities": ["bedroom", "study room", "fitness center"],
-        "image_url": "https://via.placeholder.com/400",
+        "image_url": "https://studenthousingbusiness.com/wp-content/uploads/2023/05/Interior-Design.jpg",
         "view_property_button": "<button>View Property</button>"
       },
    
@@ -66,7 +66,7 @@
         "area": "800 sq ft (studio)",
         "location": "Senior Community Area",
         "facilities": ["bedroom", "bathroom", "recreational center"],
-        "image_url": "https://via.placeholder.com/400",
+        "image_url": "https://www.storypoint.com/wp-content/uploads/2020/08/storypoint-community-exterior.jpg",
         "view_property_button": "<button>View Property</button>"
       },
     
@@ -80,7 +80,7 @@
         "area": "3000 sq ft",
         "location": "Beachfront",
         "facilities": ["bedroom", "private pool", "beach access"],
-        "image_url": "https://via.placeholder.com/400",
+        "image_url": "https://alekonakauai.com/wp-content/uploads/2022/05/alekona-kauai-vacation-rentals-1.jpg",
         "view_property_button": "<button>View Property</button>"
       }
 ]
