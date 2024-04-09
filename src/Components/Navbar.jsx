@@ -1,15 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const links = (
     <>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
+      <li className="font-semibold"><NavLink to="/">Home</NavLink></li>
+      <li className="font-semibold"><NavLink to="/aboutUs">About Us</NavLink></li>
+      <li className="font-semibold"><NavLink to="/contact">Contact</NavLink></li>
+      <li className="font-semibold"><NavLink to="/updateProfile">Update Profile</NavLink></li>
+      
+      
+      
     </>
   );
   return (
-    <div className="navbar bg-base-100 container mx-auto">
+    <div className="navbar bg-blue-100 rounded-2xl px-4 container mx-auto mb-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,7 +60,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end gap-2">
         <div
           tabIndex={0}
           role="button"
@@ -67,8 +71,12 @@ const Navbar = () => {
               alt="Tailwind CSS Navbar component"
               src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
             />
+            
           </div>
+          
         </div>
+        <Link to="/login"><button className="btn btn-primary font-neon font-bold">Login</button></Link>
+       
       </div>
     </div>
   );
