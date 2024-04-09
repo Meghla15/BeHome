@@ -9,6 +9,10 @@ Currently, two official plugins are available:
 
 Website name - BeHome
 
-For banner section - Swiper Slide.
+npm Package name- 1. React Hook From
+                  2. Animate.css
+                  3.
+
+
 For footer section - MambaUi.
 

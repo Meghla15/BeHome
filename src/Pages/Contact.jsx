@@ -2,7 +2,7 @@
 
 const Contact = () => {
     return (
-        <section className="py-6 dark:bg-gray-100 dark:text-gray-900 mt-10 bg-slate-200 p-4 mb-28 rounded-2xl container mx-auto">
+        <section className="py-6 dark:bg-gray-100 dark:text-gray-900 mt-10 bg-green-100 p-4 mb-28 rounded-2xl container mx-auto">
 	<div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
 		<div className="py-6 md:py-0 md:px-6">
 			<h1 className="text-4xl font-bold">Get in touch</h1>
@@ -32,11 +32,11 @@ const Contact = () => {
 		<form noValidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
 			<label className="block">
 				<span className="mb-1">Full name</span>
-				<input type="text" placeholder="Leroy Jenkins" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100" />
+				<input type="text" placeholder="Your Name" className="block w-full p-3 rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100" />
 			</label>
 			<label className="block">
 				<span className="mb-1">Email address</span>
-				<input type="email" placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100" />
+				<input type="email" placeholder="Your gamil@email.com" className="block w-full p-3 rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100" />
 			</label>
 			<label className="block">
 				<span className="mb-1">Message</span>
