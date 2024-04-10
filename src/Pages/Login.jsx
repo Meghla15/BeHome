@@ -58,7 +58,7 @@ const Login = () => {
 			<SocialLogin></SocialLogin>
             
 		</div>
-		<div className='col-span-3'>
+		<div className='col-span-3 mt-14'>
              <h1 className="text-4xl  font-extrabold dark:text-gray-900">Build Connection With Us</h1>
              <p className='font-neon mt-10 w-2/3 mx-auto text-center text-gray-600'>We value the opportunity to connect with our community of homeowners, renters, and property enthusiasts. Whether you have questions about a specific property, need assistance navigating our platform, or simply want to share feedback, we're here to listen and assist you. Connect with us through our various channels – whether it's through email, phone, or social media – and let's start a conversation. Your input is invaluable to us as we continually strive to improve and enhance your experience with Your BeHome. We look forward to hearing from you and building a lasting connection together</p>
              </div>

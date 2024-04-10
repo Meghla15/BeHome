@@ -1,6 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
+import UseAuth from "../Hooks/UseAuth";
 
 const Navbar = () => {
+   const {logout, user} = UseAuth()
+   console.log(user)
   const links = (
     <>
       <li className="font-semibold"><NavLink to="/">Home</NavLink></li>
@@ -61,21 +64,25 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end gap-2">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn btn-ghost btn-circle avatar"
-        >
-          <div className="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
-            
-          </div>
-          
+      {
+       user?<div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img
+            alt="Tailwind CSS Navbar component"
+            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+          />
+         
         </div>
-        <Link to="/login"><button className="btn btn-primary font-neon font-bold">Login</button></Link>
+       
+        </label>
+        <button onClick={logout} className="btn btn-primary font-neon font-bold">Logout</button>
+       
+  
+      </div>
+      :  <Link to="/login"><button className="btn btn-primary font-neon font-bold">Login</button></Link>
+    
+      }
        
       </div>
     </div>
