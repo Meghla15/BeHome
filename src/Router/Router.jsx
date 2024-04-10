@@ -8,6 +8,7 @@ import Contact from "../Pages/Contact";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import CardDetails from "../DetailsPage/CardDetails";
+import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/card-details/:id",
-          element:<CardDetails></CardDetails>
+          element:<PrivetRoute><CardDetails></CardDetails></PrivetRoute>
         },
        {
           path: "/updateProfile",

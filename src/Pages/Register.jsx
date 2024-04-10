@@ -1,18 +1,22 @@
-import React, { useContext } from 'react';
+
 import { useForm} from "react-hook-form"
 import { Link } from 'react-router-dom';
 import UseAuth from '../Hooks/UseAuth';
 
 const Register = () => {
-    const { createUser }=UseAuth();
+    const { createUser,updateUserProfile }=UseAuth();
     
     const {register,handleSubmit,formState: { errors }} = useForm();
       const onSubmit =data =>{
-        const {email, password} =data
+        const {email, password, image, fullName } =data
         createUser(email,password)
         .then(result =>{
+            updateUserProfile(fullName, image)
             console.log(result);
         })
+        .catch(error =>{
+			console.log(error)
+		 })
       }
     return (
         <section className="p-6 dark:text-gray-800">
