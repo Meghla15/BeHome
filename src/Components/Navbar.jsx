@@ -3,13 +3,13 @@ import UseAuth from "../Hooks/UseAuth";
 
 const Navbar = () => {
    const {logout, user} = UseAuth()
-   console.log(user)
   const links = (
     <>
       <li className="font-semibold"><NavLink to="/">Home</NavLink></li>
       <li className="font-semibold"><NavLink to="/aboutUs">About Us</NavLink></li>
       <li className="font-semibold"><NavLink to="/contact">Contact</NavLink></li>
       <li className="font-semibold"><NavLink to="/updateProfile">Update Profile</NavLink></li>
+      <li className="font-semibold"><NavLink to="/userProfile">User Profile</NavLink></li>
       
       
       

@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
 const Card = ({item}) => {
-    const {estate_title, id,segment_name,price,status,area,location,facilities,image_url} = item || {};
+    const {estate_title, id,price,status,area,location,facilities,image_url} = item || {};
 
     return (
-       <Link to={`/card-details/${id}`}> <div className="card w-96 bg-base-100 shadow-xl">
+       <Link to={`/card-details/${id}`}> <div className="card container flex justify-between items-stretch h-full w-96 bg-base-100 shadow-xl">
        <figure><div>
        <img className="h-1/3" src={image_url} />
        </div></figure>
-       <div className="card-body py-3">
+       <div className="card-body py-2">
          <h2 className="card-title font-bold lg:text-2xl text-xl">{estate_title}</h2>
         <div className="flex lg:flex-row flex-col gap-4">
         <div className="flex">
@@ -29,7 +29,7 @@ const Card = ({item}) => {
        <div>
        <p className="font-bold">Facilities: </p>
         <ul className='list-disc pl-5'>
-                   {item.facilities.map((facilities, index) => (
+                   {facilities?.map((facilities, index) => (
                     <li className='opacity-70' key={index}> {facilities}</li>
                      ))}
                    </ul>

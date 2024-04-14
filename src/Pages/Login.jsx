@@ -25,7 +25,7 @@ const Login = () => {
     return (
         <section className="p-6 bg-green-100 dark:text-gray-800 container mx-auto rounded-2xl mb-14">
 	<div className=" grid gap-4 text-center lg:grid-cols-2 xl:grid-cols-5">
-		<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 lg:col-span-2 col-span-3 bg-gray-100 border-[1px] border-slate-300">
+		<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 lg:col-span-2 col-span-3 bg-gray-100 border-[1px] border-slate-300 animate__animated animate__bounceInLeft">
         
 			
 			<form  onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="self-stretch space-y-3">
@@ -58,7 +58,7 @@ const Login = () => {
 			<SocialLogin></SocialLogin>
             
 		</div>
-		<div className='col-span-3 mt-14'>
+		<div className='col-span-3 mt-14 animate__animated animate__bounceInRight'>
              <h1 className="text-4xl  font-extrabold dark:text-gray-900">Build Connection With Us</h1>
              <p className='font-neon mt-10 w-2/3 mx-auto text-center text-gray-600'>We value the opportunity to connect with our community of homeowners, renters, and property enthusiasts. Whether you have questions about a specific property, need assistance navigating our platform, or simply want to share feedback, we're here to listen and assist you. Connect with us through our various channels – whether it's through email, phone, or social media – and let's start a conversation. Your input is invaluable to us as we continually strive to improve and enhance your experience with Your BeHome. We look forward to hearing from you and building a lasting connection together</p>
              </div>

@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import CardDetails from "../DetailsPage/CardDetails";
 import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
+import UserProfile from "../Pages/UserProfile";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         {
           path: "/card-details/:id",
           element:<PrivetRoute><CardDetails></CardDetails></PrivetRoute>
+        },
+        {
+          path:"/userProfile",
+          element: <PrivetRoute><UserProfile></UserProfile></PrivetRoute>
         },
        {
           path: "/updateProfile",

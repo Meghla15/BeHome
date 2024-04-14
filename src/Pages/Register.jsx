@@ -1,17 +1,24 @@
 
 import { useForm} from "react-hook-form"
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import UseAuth from '../Hooks/UseAuth';
 
 const Register = () => {
     const { createUser,updateUserProfile }=UseAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state || "/";
     
     const {register,handleSubmit,formState: { errors }} = useForm();
       const onSubmit =data =>{
         const {email, password, image, fullName } =data
+         
         createUser(email,password)
         .then(result =>{
             updateUserProfile(fullName, image)
+            .then(() =>{
+                navigate(from)
+             })
             console.log(result);
         })
         .catch(error =>{
@@ -21,7 +28,7 @@ const Register = () => {
     return (
         <section className="p-6 dark:text-gray-800">
         <form onSubmit={handleSubmit(onSubmit)}  noValidate="" className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow bg-gray-50">
-            <h2 className="w-full text-3xl font-bold leading-tight text-center">Please Register</h2>
+            <h2 className="w-full text-3xl text-blue-700 font-bold leading-tight text-center">Please Register</h2>
             <div>
                 <label htmlFor="name" className="block mb-1 ml-1">Name</label>
                 <input  {...register("name", { required: true })} id="name" type="text" placeholder="Your name" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100" />

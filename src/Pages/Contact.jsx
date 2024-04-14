@@ -1,3 +1,4 @@
+import { MapContainer } from "react-leaflet";
 
 
 const Contact = () => {
@@ -44,7 +45,9 @@ const Contact = () => {
 			</label>
 			<button type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-600 dark:text-gray-50 focus:dark:ring-violet-600 hover:dark:ring-violet-600">Submit</button>
 		</form>
+	  
 	</div>
+	
 </section>
     );
 };

@@ -19,7 +19,7 @@ const CardDetails = () => {
            
         }
     },[cardData,id]);
-    const {segment_name,estate_title } = singleData || {}
+    const {segment_name,estate_title,facilities } = singleData || {}
    
     return (
         <div className="hero min-h-screen container mx-auto rounded-2xl bg-base-200 mb-40">
@@ -50,12 +50,13 @@ const CardDetails = () => {
         </div>
         </div>
 
-        {/* <p className="font-bold">Facilities: </p>
+        <p className="font-bold">Facilities: </p>
         <ul className='list-disc pl-5'>
-                   {item.facilities.map((facilities, index) => (
+                   {
+                   facilities?.map((facilities, index) => (
                     <li className='opacity-70' key={index}> {facilities}</li>
                      ))}
-                   </ul> */}
+                   </ul>
                    <p className='font-semibold font-neon text-2xl mt-3'>Price : <span className='font-neon font-extrabold '> 2500000$</span></p>
           </div>
         </div>
