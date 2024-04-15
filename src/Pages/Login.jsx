@@ -1,11 +1,13 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import UseAuth from '../Hooks/UseAuth';
 import SocialLogin from '../Components/SocialLogin/SocialLogin';
 
 const Login = () => {
 	const {signInUser} =UseAuth();
+	const navigate = useNavigate();
+	const from = "/";
 
 	const {register,handleSubmit,formState: { errors }} = useForm();
 
@@ -14,6 +16,8 @@ const Login = () => {
 
 		 signInUser (email,password)
 		 .then(result =>{
+			navigate(from)
+			alert("user create successfully")
 			console.log(result.user)
 		 })
 		 .catch(error =>{

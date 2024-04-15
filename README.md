@@ -12,7 +12,7 @@ website url -
 
 npm Package name- 1. React Hook From
                   2. Animate.css
-                  3.
+                  3. toastify
 
 
 For footer section - MambaUi.

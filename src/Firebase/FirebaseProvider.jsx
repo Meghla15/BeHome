@@ -15,7 +15,7 @@ const githubProvider = new GithubAuthProvider();
 const FirebaseProvider = ({children}) => {
     const [user, setUser] =useState(null); 
     const [loading, setLoading] =useState(true);
-    console.log(loading)
+   
    
     
       
@@ -29,7 +29,8 @@ const FirebaseProvider = ({children}) => {
      const updateUserProfile =(name,image) =>{
        return updateProfile(auth.currentUser,
              {
-            displayName: name, photoURL: image
+            displayName: name, 
+            photoURL: image
           })
          
           

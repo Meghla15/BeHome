@@ -1,63 +1,150 @@
-
-import { useForm} from "react-hook-form"
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import UseAuth from '../Hooks/UseAuth';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import UseAuth from "../Hooks/UseAuth";
+import { useState } from "react";
 
 const Register = () => {
-    const { createUser,updateUserProfile }=UseAuth();
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location?.state || "/";
-    
-    const {register,handleSubmit,formState: { errors }} = useForm();
-      const onSubmit =data =>{
-        const {email, password, image, fullName } =data
-         
-        createUser(email,password)
-        .then(result =>{
-            updateUserProfile(fullName, image)
-            .then(() =>{
-                navigate(from)
-             })
-            console.log(result);
-        })
-        .catch(error =>{
-			console.log(error)
-		 })
-      }
-    return (
-        <section className="p-6 dark:text-gray-800">
-        <form onSubmit={handleSubmit(onSubmit)}  noValidate="" className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow bg-gray-50">
-            <h2 className="w-full text-3xl text-blue-700 font-bold leading-tight text-center">Please Register</h2>
-            <div>
-                <label htmlFor="name" className="block mb-1 ml-1">Name</label>
-                <input  {...register("name", { required: true })} id="name" type="text" placeholder="Your name" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100" />
-                {errors.name && <span className='text-red-600'>This field is required</span>}
-            </div>
-            <div>
-                <label htmlFor="email" className="block mb-1 ml-1">Email</label>
-                <input  {...register("email", { required: true })} id="email" type="email" placeholder="Your email" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100" />
-                {errors.email && <span className='text-red-600'>This field is required</span>}
-            </div>
-            <div>
-                <label htmlFor="text" className="block mb-1 ml-1">PhotoURL</label>
-                <input id="text" type="text" placeholder="Your Photo URL"  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100" />
-            </div>
-            <div>
-                <label htmlFor="password" className="block mb-1 ml-1">Password</label>
-                <input  {...register("password", { required: true })} id="email" type="password" placeholder="Enter Your Password" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-blue-00 dark:bg-gray-100" />
-                {errors.password && <span className='text-red-600'>This field is required</span>}
-            </div>
-            
-            <div>
-                <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-blue-600 text-white">Register</button>
-                <p className='text-xl font-bold text-center'> or</p>
-                <Link to={"/login"}> <button  className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-blue-600 text-white">Login</button></Link>
-           
-            </div>
-        </form>
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const { createUser, updateUserProfile } = UseAuth();
+  const navigate = useNavigate();
+  const from = "/login";
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (e) => {
+    e.preventDefault;
+    const { email, password, image, fullName } = e;
+    setError("");
+    setSuccess("");
+
+    if (password.length < 6) {
+      setError("password should be 6 character");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setError("Password should be one UpperCase letter");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setError("Password should be one lowercase letter");
+      return;
+    }
+
+    createUser(email, password)
+      .then(() => {
+        updateUserProfile(fullName, image).then(() => {
+          setSuccess("user Created Successfully");
+          navigate(from);
+        });
+      })
+      .catch((error) => {
+        setError(error.massage);
+        console.log(error);
+      });
+  };
+  return (
+    <section className="p-6 dark:text-gray-800">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate=""
+        className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow bg-gray-50"
+      >
+        <h2 className="w-full text-3xl text-blue-700 font-bold leading-tight text-center">
+          Please Register
+        </h2>
+        <div>
+          <label htmlFor="name" className="block mb-1 ml-1">
+            Name
+          </label>
+          <input
+            {...register("name", { required: true })}
+            id="name"
+            type="text"
+            placeholder="Your name"
+            required=""
+            className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+          />
+          {errors.name && (
+            <span className="text-red-600">This field is required</span>
+          )}
+        </div>
+        <div>
+          <label htmlFor="email" className="block mb-1 ml-1">
+            Email
+          </label>
+          <input
+            {...register("email", { required: true })}
+            id="email"
+            type="email"
+            placeholder="Your email"
+            required=""
+            className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+          />
+          {errors.email && (
+            <span className="text-red-600">This field is required</span>
+          )}
+        </div>
+        <div>
+          <label htmlFor="text" className="block mb-1 ml-1">
+            PhotoURL
+          </label>
+          <input
+            id="text"
+            type="text"
+            placeholder="Your Photo URL"
+            className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100"
+          />
+        </div>
+        <div>
+          <label htmlFor="password" className="block mb-1 ml-1">
+            Password
+          </label>
+          <div className="relative">
+            <input
+              {...register("password", { required: true })}
+              id="email"
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter Your Password"
+              required=""
+              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-blue-00 dark:bg-gray-100"
+            />
+            <span
+              className="absolute"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+            </span>
+          </div>
+          {errors.password && (
+            <span className="text-red-600">This field is required</span>
+          )}
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-blue-600 text-white"
+          >
+            Register
+          </button>
+          <p className="text-xl font-bold text-center"> or</p>
+          <Link to={"/login"}>
+            {" "}
+            <button className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-blue-600 text-white">
+              Login
+            </button>
+          </Link>
+        </div>
+        {error && <p className="font-bold text-red-600">{error}</p>}
+        {success && <p className="font-bold text-green-500">{success}</p>}
+      </form>
     </section>
-    );
+  );
 };
 
 export default Register;

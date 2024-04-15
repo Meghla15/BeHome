@@ -12,13 +12,14 @@ const CardDetails = () => {
 
     useEffect(()=>{
         if (cardData) {
-            const singleData =cardData.find(item => item.id === id);
+            const singleData =cardData.find(item => item.id == id);
             
             setSingleData(singleData);
             console.log(singleData)
            
         }
     },[cardData,id]);
+
     const {segment_name,estate_title,facilities } = singleData || {}
    
     return (
@@ -27,7 +28,7 @@ const CardDetails = () => {
           <img src="https://assets.lbmjournal.com/uploads/2019/11/new-single-family-home.jpg" className="w-[50%] rounded-lg shadow-2xl" />
           <div className=''>
           <p className='border-[1px] bg-red-700 text-white rounded-3xl w-1/3 text-center p-2 mb-2'>Status</p>
-            <h1 className="text-2xl font-neon font-semibold mb-2">Estate Name : <span className='font-extrabold font-neon '>Single Family Homes</span></h1>
+            <h1 className="text-2xl font-neon font-semibold mb-2">Estate Name : {estate_title}</h1>
             <h1 className="text-2xl font-neon font-bold">Estate Title :<span className='font-extrabold font-neon '>Spacious Family Home in Suburbia</span></h1>
           
             <p> <span className="py-6 text-xl font-semibold">Description: </span> This beautiful single-family home boasts 4 bedrooms, 2 bathrooms, and a large backyard, making it perfect for families seeking comfort and space. Nestled in the serene suburbs, this property offers a peaceful retreat from the hustle and bustle of city life. With ample natural light and modern amenities, including a spacious living room and fully equipped kitchen, this home is ideal for both relaxation and entertaining guests. Enjoy outdoor gatherings or simply unwind in the privacy of your backyard oasis. Conveniently located near schools, parks, and shopping centers, this home offers the perfect blend of tranquility and convenience.</p>

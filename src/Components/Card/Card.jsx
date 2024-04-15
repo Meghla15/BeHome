@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Card = ({item}) => {
-    const {estate_title, id,price,status,area,location,facilities,image_url} = item || {};
+    const {estate_title, id,price,area,location,facilities,image_url} = item || {};
 
     return (
        <Link to={`/card-details/${id}`}> <div className="card container flex justify-between items-stretch h-full w-96 bg-base-100 shadow-xl">
