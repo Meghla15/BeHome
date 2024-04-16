@@ -1,17 +1,15 @@
 import React from 'react';
 import UseAuth from '../../Hooks/UseAuth';
-import { Link, useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Login from '../../Pages/Login';
 
 const PrivetRoute = ({children}) => {
-    const{user,loading} =UseAuth()
-    const location = useLocation();
+    const{user} =UseAuth()
+    
 
-    if(loading){
-        return <span className="loading loading-spinner loading-lg "></span>
-    }
+    
 
-    if (!user) {
+   if (!user) {
         return <Link to={"/login"}><Login></Login></Link>
     }
     return (

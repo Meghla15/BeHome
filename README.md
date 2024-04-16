@@ -1,19 +1,19 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
 Website name - BeHome
-website url -
+
+five bullet point - 1. Navbar, 
+                    2. Banner,
+                    3. Estate,
+                    4. Footer,
+                    5. Details section
 
 npm Package name- 1. React Hook From
                   2. Animate.css
-                  3. toastify
+                  3. React icons
+                  4. firebase
+                  5. daisyUI
+                  6. Tailwind css
+                 
 
 
-For footer section - MambaUi.
+
 

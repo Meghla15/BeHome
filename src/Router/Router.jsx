@@ -43,13 +43,11 @@ const router = createBrowserRouter([
           element:<PrivetRoute><CardDetails></CardDetails></PrivetRoute>
         },
         {
-          path:"/userProfile",
-          element: <PrivetRoute><UserProfile></UserProfile></PrivetRoute>
-        },
-       {
           path: "/updateProfile",
-          element:<UpdateProfile></UpdateProfile>,
+          element:<PrivetRoute><UpdateProfile></UpdateProfile></PrivetRoute>,
        },
+       
+       
      
     ]
     },

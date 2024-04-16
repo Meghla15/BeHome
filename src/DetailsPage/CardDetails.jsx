@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import useCartData from '../Hooks/UseCardData';
 import { Link, useParams } from 'react-router-dom';
+import { tabTitle } from '../Hooks/DynamicTitle/FunctionTitle';
 
 
 const CardDetails = () => {
+  tabTitle ("BeHome | Details Page")
     const [singleData, setSingleData] = useState({})
     const {id} = useParams();
     const {cardData} =useCartData();
@@ -59,7 +61,7 @@ const CardDetails = () => {
                      ))}
                    </ul>
                    <p className='font-semibold font-neon text-2xl mt-3'>Price : <span className='font-neon font-extrabold '> {price}$</span></p>
-                   {/* <button className='btn bg-green-500 w-32 text-white'></button> */}
+                  
 
                   <Link to="/">
                   <a href="#_" className=" mt-2 relative inline-block text-lg group">

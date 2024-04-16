@@ -3,8 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import UseAuth from '../Hooks/UseAuth';
 import SocialLogin from '../Components/SocialLogin/SocialLogin';
+import { tabTitle } from '../Hooks/DynamicTitle/FunctionTitle';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
+	tabTitle ("BeHome | Login");
 	const {signInUser} =UseAuth();
 	const navigate = useNavigate();
 	const from = "/";
@@ -15,13 +18,18 @@ const Login = () => {
          const {email, password} =data;
 
 		 signInUser (email,password)
+		 
 		 .then(result =>{
-			navigate(from)
-			alert("user create successfully")
 			console.log(result.user)
+			toast.success("Login Successfully")
+			navigate(from)
+			
+			
+			
 		 })
 		 .catch(error =>{
 			console.log(error)
+			toast.error('Invalid Email or password')
 		 })
 
 
@@ -55,6 +63,7 @@ const Login = () => {
                 </div>
 				<div>
                 <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-blue-600 text-white">Login</button>
+				
 				
 				
             </div>

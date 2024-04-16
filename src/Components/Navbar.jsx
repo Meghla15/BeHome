@@ -18,9 +18,7 @@ const Navbar = () => {
       <li className="font-semibold">
         <NavLink to="/updateProfile">Update Profile</NavLink>
       </li>
-      <li className="font-semibold">
-        <NavLink to="/userProfile">User Profile</NavLink>
-      </li>
+     
     </>
   );
   return (

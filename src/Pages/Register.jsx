@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import { useState } from "react";
+import { tabTitle } from "../Hooks/DynamicTitle/FunctionTitle";
 
 const Register = () => {
+  tabTitle ("BeHome | Register");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);

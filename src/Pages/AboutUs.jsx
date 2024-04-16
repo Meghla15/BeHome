@@ -1,6 +1,8 @@
 import React from 'react';
+import { tabTitle } from '../Hooks/DynamicTitle/FunctionTitle';
 
 const AboutUs = () => {
+	tabTitle ("BeHome | AboutUs")
     return (
         <section className="my-8 mb-14 bg-green-100 rounded-2xl container mx-auto animate__animated animate__pulse ">
 	<div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
