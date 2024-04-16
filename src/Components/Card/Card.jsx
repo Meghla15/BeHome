@@ -4,7 +4,7 @@ const Card = ({item}) => {
     const {estate_title, id,price,area,location,facilities,image_url} = item || {};
 
     return (
-       <Link to={`/card-details/${id}`}> <div className="card container flex justify-between items-stretch h-full w-96 bg-base-100 shadow-xl">
+       <Link to={`/card-details/${id}`}> <div className="card container flex justify-between items-stretch h-full w-96 bg-base-100 shadow-xl" >
        <figure><div>
        <img className="h-1/3" src={image_url} />
        </div></figure>

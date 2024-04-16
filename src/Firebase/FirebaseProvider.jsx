@@ -14,6 +14,7 @@ const githubProvider = new GithubAuthProvider();
 
 const FirebaseProvider = ({children}) => {
     const [user, setUser] =useState(null); 
+    console.log(user)
     const [loading, setLoading] =useState(true);
    
    

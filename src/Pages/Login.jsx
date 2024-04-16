@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import UseAuth from '../Hooks/UseAuth';
 import SocialLogin from '../Components/SocialLogin/SocialLogin';
 import { tabTitle } from '../Hooks/DynamicTitle/FunctionTitle';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 
 const Login = () => {
 	tabTitle ("BeHome | Login");
@@ -20,16 +20,16 @@ const Login = () => {
 		 signInUser (email,password)
 		 
 		 .then(result =>{
-			console.log(result.user)
 			toast.success("Login Successfully")
 			navigate(from)
+			console.log(result)
 			
 			
 			
 		 })
 		 .catch(error =>{
+			toast.error("Invalid Email or Password ")
 			console.log(error)
-			toast.error('Invalid Email or password')
 		 })
 
 

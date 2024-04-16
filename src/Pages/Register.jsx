@@ -10,7 +10,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, updateUserProfile } = UseAuth();
+  const { createUser,updateUserProfile } = UseAuth();
   const navigate = useNavigate();
   const from = "/login";
 
@@ -22,7 +22,7 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault;
-    const { email, password, image, fullName } = e;
+    const { email, password } = e;
     setError("");
     setSuccess("");
 
@@ -38,14 +38,13 @@ const Register = () => {
     }
 
     createUser(email, password)
-      .then(() => {
-        updateUserProfile(fullName, image).then(() => {
-          setSuccess("user Created Successfully");
-          navigate(from);
-        });
+      .then((result) => {
+        if(result.user) {
+          navigate(from)
+        }
       })
       .catch((error) => {
-        setError(error.massage);
+        
         console.log(error);
       });
   };
